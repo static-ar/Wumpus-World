@@ -1,5 +1,5 @@
 """
-Knowledge-Based Wumpus Agent  –  v2
+Knowledge-Based Wumpus Agent
 
 Status flow:
   exploring        → normal KB-driven exploration
