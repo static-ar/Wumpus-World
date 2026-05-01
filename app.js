@@ -1,5 +1,5 @@
 /* ================================================================
-   Wumpus World Logic Agent  –  Frontend 
+   Wumpus World Logic Agent  –  Frontend v2
    New:
      - 'backtracking_home' status: agent animates path home with gold
      - 'backtracking_stuck' status: agent animates return to (0,0)
