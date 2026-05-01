@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wumpus World Logic Agent v2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>🧠 Wumpus World Logic Agent <span class="version-badge">v2</span></h1>
+  <p class="subtitle">Knowledge-Based Agent · Propositional Logic · Resolution Refutation</p>
+</header>
+
+<main>
+
+  <!-- ── Controls ── -->
+  <section class="card controls-card">
+    <h2>Game Controls</h2>
+    <div class="controls-row">
+      <label>Rows <input id="rows" type="number" min="4" max="10" value="4" /></label>
+      <label>Cols <input id="cols" type="number" min="4" max="10" value="4" /></label>
+      <button class="btn btn-primary" onclick="newGame()">🆕 New Game</button>
+      <button class="btn btn-secondary" id="step-btn" disabled>⏭ Step</button>
+      <button class="btn btn-secondary" id="auto-btn" disabled>▶️ Auto Play</button>
+    </div>
+  </section>
+
+  <div class="main-layout">
+
+    <!-- ── Grid ── -->
+    <section class="card grid-card">
+      <h2>World Grid</h2>
+      <div id="grid-container" class="grid-container"></div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <span class="legend-item agent">🤖 Agent</span>
+        <span class="legend-item backtracking">🏃 Backtracking</span>
+        <span class="legend-item visited">✓ Visited</span>
+        <span class="legend-item frontier">? Frontier</span>
+        <span class="legend-item safe">· Safe</span>
+        <span class="legend-item pit">🕳️ Pit</span>
+        <span class="legend-item wumpus">👹 Wumpus</span>
+        <span class="legend-item unknown">░ Unknown</span>
+      </div>
+    </section>
+
+    <!-- ── Right panel ── -->
+    <aside class="right-panel">
+
+      <!-- Percepts -->
+      <section class="card">
+        <h2>Current Percepts</h2>
+        <div id="percepts-display">
+          <span class="percept-tag none">Start a game first</span>
+        </div>
+      </section>
+
+      <!-- Metrics -->
+      <section class="card">
+        <h2>Metrics Dashboard</h2>
+        <table class="metrics-table">
+          <tr><td>Inference Steps</td><td><strong id="inference-steps">—</strong></td></tr>
+        </table>
+      </section>
+
+    </aside>
+  </div>
+
+</main>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
